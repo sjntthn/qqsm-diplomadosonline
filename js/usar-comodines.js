@@ -140,7 +140,7 @@ function retirarse(link, comodin) {
             Swal.fire({
                 title: 'USTED GANO ' + premio + '$ FELICIDADES, UN NIÑO DE 5 LO HABRIA HECHO MEJOR!!!',
                 html: 'Se cerrara en <b></b> Segundos.',
-                timer: 5000,
+                timer: 20000,
                 timerProgressBar: true,
                 imageUrl: 'assets/img/logo.png',
                 imageAlt: 'Custom image',

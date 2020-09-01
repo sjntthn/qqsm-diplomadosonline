@@ -168,7 +168,7 @@ function validarRespuesta(seleccionada) {
         Swal.fire({
             title: 'USTED GANO ' + dinero_seguro.innerHTML + '$ FELICIDADES,<br> UN NIÑO DE 5 AÑOS LO HABRIA HECHO MEJOR!!!',
             html: '<h4>La repuesta correcta era: ' + correcta + '<br> Reiniciando Juego en <b></b> Segundos.</h4>',
-            timer: 10000,
+            timer: 20000,
             timerProgressBar: true,
             imageUrl: 'assets/img/logo.png',
             imageAlt: 'Custom image',
