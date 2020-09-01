@@ -89,7 +89,7 @@ function validarRespuesta(seleccionada) {
             Swal.fire({
                 title: 'USTED GANO ' + dinero_seguro.innerHTML + '$ FELICIDADES,<br> NO ERES TAN IDIOTA COMO PENSABAMOS!!!',
                 html: '<h4>Reiniciando Juego en <b></b> Segundos.</h4>',
-                timer: 20000,
+                timer: 12000,
                 timerProgressBar: true,
                 imageUrl: 'assets/img/logo.png',
                 imageAlt: 'Custom image',
@@ -167,7 +167,7 @@ function validarRespuesta(seleccionada) {
 
         Swal.fire({
             title: 'USTED GANO ' + dinero_seguro.innerHTML + '$ FELICIDADES,<br> UN NIÑO DE 5 AÑOS LO HABRIA HECHO MEJOR!!!',
-            html: '<h4>La repuesta correcta era: ' + correcta + '<br> Reiniciando Juego en <b></b> Segundos.</h4>',
+            html: '<h3>La repuesta correcta era: ' + correcta + '</h3><h4><br> Reiniciando Juego en <b></b> Segundos.</h4>',
             timer: 20000,
             timerProgressBar: true,
             imageUrl: 'assets/img/logo.png',

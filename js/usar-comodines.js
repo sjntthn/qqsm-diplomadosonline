@@ -125,7 +125,7 @@ function retirarse(link, comodin) {
     var premio = document.getElementById('acumulado').innerHTML;
     let timerInterval
     Swal.fire({
-        title: '¿TE RETIRAS?',
+        title: '¿TE RETIRAS INUTIL?',
         html: "<h4>¿Realmente desear Retirarte?</h4>",
         icon: 'warning',
         showCancelButton: true,
@@ -138,9 +138,9 @@ function retirarse(link, comodin) {
     }).then((result) => {
         if (result.value) {
             Swal.fire({
-                title: 'USTED GANO ' + premio + '$ FELICIDADES, UN NIÑO DE 5 LO HABRIA HECHO MEJOR!!!',
+                title: 'USTED GANO ' + premio + '$ FELICIDADES, NO ESPERABAMOS TANTO DE TI!!!',
                 html: 'Se cerrara en <b></b> Segundos.',
-                timer: 20000,
+                timer: 12000,
                 timerProgressBar: true,
                 imageUrl: 'assets/img/logo.png',
                 imageAlt: 'Custom image',
@@ -261,6 +261,7 @@ function consultarAudiencia() {
         '</div>';
     Swal.fire({
         title: contenido,
+        html: '<h3>Cualquiera sabe más que tú<br>¿No sientes Verguenza de ti mismo?</h3>',
         allowOutsideClick: false
     }).then((result) => {
         pausarComodin();
