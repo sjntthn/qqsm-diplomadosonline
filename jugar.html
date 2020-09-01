@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal/minimal.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUGAR</title>
+</head>
+
+<body class="bg-blue">
+    <div class="container">
+        <div class="contenedor-comodines">
+            <div class="niveles">
+                <div><span id="badge15" class="acumular">1000000$</span></div>
+                <div><span id="badge14">500000$</span></div>
+                <div><span id="badge13">320000$</span></div>
+                <div><span id="badge12">160000$</span></div>
+                <div><span id="badge11">80000$</span></div>
+                <div><span id="badge10" class="acumular">40000$</span></div>
+                <div><span id="badge9">&nbsp;20000$</span></div>
+                <div><span id="badge8">&nbsp;10000$</span></div>
+                <div><span id="badge7">&nbsp;5000$</span></div>
+                <div><span id="badge6">&nbsp;2500$</span></div>
+                <div><span id="badge5" class="acumular">2000$</span></div>
+                <div><span id="badge4">1000$</span></div>
+                <div><span id="badge3">500$</span></div>
+                <div><span id="badge2">250$</span></div>
+                <div><span id="badge1" class="nivelActual">125$</span></div>
+                <span id="nivel" style="display:none;">1</span>
+            </div>
+
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="">
+            </div>
+
+            <div class="comodines">
+                <a href="#" onclick="usarComodin(this, 'descartar2');">
+                    <div id="descartar2"><span>50:50 </span></div>
+                </a>
+
+                <a href="#" onclick="usarComodin(this, 'tiempo');">
+                    <div id="tiempo"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                </a>
+
+                <a href="#" onclick="usarComodin(this, 'audiencia');">
+                    <div id="audiencia"><i class="fa fa-users" aria-hidden="true"></i></div>
+                </a>
+
+                <a href="#" onclick="usarComodin(this, 'perdio');">
+                    <div id="perdio"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                </a>
+
+                <div class="dinero">$<span id="acumulado">0</span></div>
+                <span id="dinero_seguro" style="display:none;">0</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="preguntas">
+                <h2 id="pregunta">¿PREGUNTA?</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="respuestas">
+                <a href="#" onclick="seleccionar('respuesta1');">
+                    <div class="col-md-6">
+                        <h4 id="respuesta1">
+                            Respuesta1
+                        </h4>
+                    </div>
+                </a>
+                <a href="#" onclick="seleccionar('respuesta2');">
+                    <div class="col-md-6">
+                        <h4 id="respuesta2">
+                            Respuesta2
+                        </h4>
+                    </div>
+                </a>
+                <a href="#" onclick="seleccionar('respuesta3');">
+                    <div class="col-md-6">
+                        <h4 id="respuesta3">
+                            Respuesta3
+                        </h4>
+                    </div>
+                </a>
+                <a href="#" onclick="seleccionar('respuesta4');">
+                    <div class="col-md-6">
+                        <h4 id="respuesta4">
+                            Respuesta4
+                        </h4>
+                    </div>
+                </a>
+                <h4 id="respuestaCorrecta" style="display:none;"></h4>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/usar-comodines.js"></script>
+    <script type="text/javascript" src="js/preguntas.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript">
+        (async() => {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                onOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+
+            Toast.fire({
+                icon: 'success',
+                title: 'Preparate para ser millonario'
+            })
+
+            if (Toast) {
+                hacerPregunta();
+            }
+        })()
+    </script>
+</body>
+
+</html>

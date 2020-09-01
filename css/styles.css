@@ -1,0 +1,308 @@
+/*Primordiales*/
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+@media(min-width: 480px) {
+    .contenedor {
+        max-width: 60rem;
+        margin: 0 auto;
+    }
+}
+
+.contenedor-100 {
+    max-height: 1oo%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+
+/*Utilidad*/
+
+.seccion {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.d-block {
+    display: block;
+}
+
+.contenido-centrado {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bg-blue {
+    background-color: #19214f;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.expandir {
+    margin: 0;
+}
+
+.txt-white {
+    color: white;
+}
+
+.txt-gray {
+    color: grey;
+}
+
+.txt-blue {
+    color: #19214f;
+}
+
+
+/*Imagenes*/
+
+.img-centrada {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*Botones*/
+
+.boton {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    border-radius: 5rem;
+}
+
+.boton:hover {
+    cursor: pointer;
+    background-color: #2a1e94;
+}
+
+.boton-desactivado {
+    background-color: #d44911;
+}
+
+
+/*comodines*/
+
+.iconos-comodines {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icono {
+    flex-basis: calc(33.3% - 1rem);
+    text-align: center;
+    color: #19214f;
+}
+
+
+/*premios*/
+
+.premios span {
+    color: white;
+}
+
+@media(min-width: 768px) {
+    .dos-columnas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+
+/*JUGAR.html*/
+
+.comodines div {
+    background: linear-gradient(to bottom, #121656 0%, #2b2e91 100%);
+    border: .3rem solid #FFF;
+    border-radius: 3rem;
+    margin: .5rem;
+    width: auto;
+    padding: .5rem;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.comodines i {
+    color: #FFF;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.comodines div:hover {
+    background: linear-gradient(to bottom, #0abb3f 0%, #0adf3f 100%);
+}
+
+.niveles span {
+    background: linear-gradient(to bottom, #121656 0%, #2b2e91 100%);
+    border: .3rem solid #FFF;
+    border-radius: 3rem;
+    margin: .2rem;
+    width: auto padding: .5rem;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.niveles span:hover {
+    background: linear-gradient(to bottom, #0abb3f 0%, #0adf3f 100%);
+}
+
+.niveles .acumular {
+    color: #d44911;
+}
+
+.niveles .nivelActual {
+    border: .3rem solid #ff7f04;
+    color: #fff;
+    background: linear-gradient(to bottom, #ffb76b 0%, #ff7f04 100%) !important;
+}
+
+.dinero {
+    background: linear-gradient(to bottom, #ffb76b 0%, #ff7f04 100%) !important;
+}
+
+.logo {
+    padding: 5rem 0rem 2rem 0rem;
+    text-align: center;
+}
+
+.preguntas {
+    background: linear-gradient(to bottom, #121656 0%, #2b2e91 100%);
+    border: .5rem solid #FFF;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.preguntas h2 {
+    font-size: 3rem;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: .2rem;
+}
+
+.respuestas {
+    text-align: center;
+    cursor: pointer;
+}
+
+.respuestas div {
+    background: linear-gradient(to bottom, #121656 0%, #2b2e91 100%);
+    border: .3rem solid #FFF;
+    border-radius: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.respuestas div:hover {
+    background: linear-gradient(to bottom, #ffb76b 0%, #ff7f04 100%);
+}
+
+.respuestas h4 {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: .1rem;
+}
+
+.no-subrayado {
+    text-decoration: none;
+}
+
+.contenedorAudiencia {
+    width: 40rem;
+    height: 20rem;
+    background-color: #ddd;
+    margin: .2rem;
+    display: grid;
+    grid-template-areas: "a a a" "b b b" "b b b" "b b b" "b b b" "b b b";
+}
+
+.porcentajeAudiencia {
+    text-align: bottom;
+    color: white;
+    align-self: end;
+}
+
+@media(min-width: 480px) {
+    .contenedor-comodines {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        column-gap: 4rem;
+        align-items: center;
+    }
+    .logo {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .comodines {
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+    .niveles {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    a {
+        text-decoration: none;
+    }
+}
