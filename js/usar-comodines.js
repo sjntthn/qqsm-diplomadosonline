@@ -60,7 +60,7 @@ function ejecutarComodin(link, comodin) {
             consultarAudiencia();
             break;
         case "tiempo":
-
+            LlamarUnAmigo();
             break;
         case "descartar2":
             cincuenta50();
@@ -243,4 +243,44 @@ function consultarAudiencia() {
         title: contenido,
         allowOutsideClick: false
     });
+}
+
+
+function LlamarUnAmigo() {
+    (async() => {
+        const inputOptions = new Promise((resolve) => {
+            setTimeout(() => {
+                resolve({
+                    "1": 'Jose',
+                    "2": 'Carlos',
+                    "3": 'Anna'
+                })
+            }, 1000)
+        })
+
+        const { value: respuesta } = await Swal.fire({
+            title: '¿A Quién vas a llamar?',
+            input: 'radio',
+            inputOptions: inputOptions,
+            allowOutsideClick: false,
+            inputValidator: (value) => {
+                if (!value) {
+                    return 'Selecciona a alguno pedazo de Baboso!'
+                }
+            }
+        })
+
+        if (respuesta) {
+            var rALaSuerte = document.getElementById("respuesta3").innerHTML;
+            var rCorrecta = document.getElementById("respuestaCorrecta").innerHTML;
+            var res;
+            if (respuesta == "1" || respuesta == "2") {
+                res = rCorrecta;
+            } else {
+                res = rALaSuerte;
+            }
+            Swal.fire({ html: `La respuesta correcta es ${res}` })
+        }
+
+    })()
 }
