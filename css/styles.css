@@ -307,7 +307,7 @@ p {
         align-items: center;
     }
     img {
-        max-width: 70%;
+        max-width: 50%;
     }
     .niveles {
         display: none;
