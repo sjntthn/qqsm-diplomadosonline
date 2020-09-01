@@ -302,12 +302,29 @@ p {
     align-self: end;
 }
 
+@media(max-width: 479px) {
+    .contenedor-comodines {
+        align-items: center;
+    }
+    .niveles {
+        display: none;
+    }
+    .comodines {
+        width: 5rem;
+        display: inline-flex;
+    }
+}
+
 @media(min-width: 480px) {
     .contenedor-comodines {
         display: grid;
         grid-template-columns: 1fr 3fr 1fr;
         column-gap: 4rem;
         align-items: center;
+    }
+    .niveles {
+        grid-column: 1/2;
+        grid-row: 1/2;
     }
     .logo {
         grid-column: 2/3;
@@ -316,12 +333,5 @@ p {
     .comodines {
         grid-column: 3/4;
         grid-row: 1/2;
-    }
-    .niveles {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-    a {
-        text-decoration: none;
     }
 }
