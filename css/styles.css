@@ -306,6 +306,9 @@ p {
     .contenedor-comodines {
         align-items: center;
     }
+    img {
+        max-width: 70%;
+    }
     .niveles {
         display: none;
     }
