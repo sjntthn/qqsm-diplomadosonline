@@ -4,9 +4,6 @@ function usarComodin(link, comodin) {
     let elementStyle = window.getComputedStyle(link);
     let usado = elementStyle.getPropertyValue('pointer-events');
     if (usado != "none") {
-        if (sonido != null) {
-            stopSonido();
-        }
         sonidoComodin(comodin);
         marcarComodin(link, comodin);
         ejecutarComodin(link, comodin);
@@ -21,34 +18,63 @@ function marcarComodin(link, comodin) {
     link.style.cssText = 'pointer-events: none;';
 }
 
+var audiencia = null;
+var tiempo = null;
+var descartar2 = null;
+var perdio = null;
+
 function sonidoComodin(aReproducir) {
-    sonido = new Audio();
-    sonido.pause();
-
-    switch (aReproducir) {
-        case "audiencia":
-            sonido.src = "assets/sounds/question.mp3";
-            break;
-        case "tiempo":
-            sonido.src = "assets/sounds/question2.mp3";
-            break;
-        case "descartar2":
-            sonido.src = "assets/sounds/remove.mp3";
-            break;
-        case "perdio":
-            sonido.src = "assets/sounds/lose.mp3";
-            break;
-        default:
-            break;
+    let activo = document.getElementById("sonidoActivo");
+    if (activo.innerHTML == "1") {
+        pausarComodin();
+        switch (aReproducir) {
+            case "audiencia":
+                audiencia = new Audio();
+                audiencia.src = "assets/sounds/REMOVER.mp3";
+                audiencia.loop = false;
+                audiencia.play();
+                break;
+            case "tiempo":
+                tiempo = new Audio();
+                tiempo.src = "assets/sounds/TICTOC.mp3";
+                tiempo.loop = false;
+                tiempo.play();
+                break;
+            case "descartar2":
+                descartar2 = new Audio();
+                descartar2.src = "assets/sounds/REMOVER.mp3";
+                descartar2.loop = false;
+                descartar2.play();
+                break;
+            case "perdio":
+                perdio = new Audio();
+                perdio.src = "assets/sounds/PERDIO.mp3";
+                perdio.loop = false;
+                perdio.play();
+                break;
+            default:
+                break;
+        }
     }
-
-    sonido.loop = false;
-    sonido.play();
 }
 
-function stopSonido() {
-    sonido.pause();
-    sonido = null;
+function pausarComodin() {
+    if (perdio != null) {
+        perdio.pause();
+        perdio = null;
+    }
+    if (tiempo != null) {
+        tiempo.pause();
+        tiempo = null;
+    }
+    if (descartar2 != null) {
+        descartar2.pause();
+        descartar2 = null;
+    }
+    if (audiencia != null) {
+        audiencia.pause();
+        audiencia = null;
+    }
 }
 
 function ejecutarComodin(link, comodin) {
@@ -98,21 +124,15 @@ function comodinUsado() {
 function retirarse(link, comodin) {
     var premio = document.getElementById('acumulado').innerHTML;
     let timerInterval
-    const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
-        },
-        buttonsStyling: false
-    })
-
-    swalWithBootstrapButtons.fire({
-        title: 'ME RETIRO',
-        text: "¿Realmente desear Retirarte?",
+    Swal.fire({
+        title: '¿TE RETIRAS?',
+        html: "<h4>¿Realmente desear Retirarte?</h4>",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Si, Me retiro!',
-        cancelButtonText: 'No, Sigo Jugando!',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '<h4>Si, bye losers!!!</h4>',
+        cancelButtonText: '<h4>No, ya va!</h4>',
         allowOutsideClick: false,
         reverseButtons: true
     }).then((result) => {
@@ -155,9 +175,9 @@ function retirarse(link, comodin) {
             var elemento = document.getElementById(comodin);
             elemento.style.cssText = 'background: linear-gradient(to bottom, #121656 0%, #2b2e91 100%);';
             link.style.cssText = 'pointer-events: noretirado;';
-            swalWithBootstrapButtons.fire(
-                'NO ME RETIRO PORQUE SOY RETRASADO',
-                'Continuo Jugando, EXCELENTE!!!, amo ser humillado',
+            Swal.fire(
+                'SI YO FUERA TU ME HABRIA RETIRADO',
+                '<h4>Estás bien pendejo pero te gusta ser humillado</h4>',
                 'success'
             )
         }
@@ -242,44 +262,55 @@ function consultarAudiencia() {
     Swal.fire({
         title: contenido,
         allowOutsideClick: false
+    }).then((result) => {
+        pausarComodin();
     });
 }
 
-
 function LlamarUnAmigo() {
+    var jose = 'Ing. Jose<br><img class="card-img-top"  style="width: 20rem;" src="assets/img/jose.png" alt="imagen de jose">';
+    var carlos = 'Lic. Carlos<br><img class="card-img-top"  style="width: 20rem;" src="assets/img/carlos.png" alt="imagen de carlos">';
+    var guzman = 'Guzmán<br><img class="card-img-top"  style="width: 20rem;" src="assets/img/guzman.png" alt="imagen de guzman">';
     (async() => {
         const inputOptions = new Promise((resolve) => {
             setTimeout(() => {
                 resolve({
-                    "1": 'Jose',
-                    "2": 'Carlos',
-                    "3": 'Anna'
+                    "1": jose,
+                    "2": carlos,
+                    "3": guzman
                 })
             }, 1000)
         })
 
         const { value: respuesta } = await Swal.fire({
             title: '¿A Quién vas a llamar?',
-            input: 'radio',
             inputOptions: inputOptions,
+            input: 'radio',
             allowOutsideClick: false,
             inputValidator: (value) => {
                 if (!value) {
-                    return 'Selecciona a alguno pedazo de Baboso!'
+                    return '<h3>Selecciona alguno pedazo de Baboso!</h3>'
                 }
             }
         })
 
         if (respuesta) {
+            pausarComodin();
             var rALaSuerte = document.getElementById("respuesta3").innerHTML;
             var rCorrecta = document.getElementById("respuestaCorrecta").innerHTML;
             var res;
-            if (respuesta == "1" || respuesta == "2") {
+            var imagen;
+            if (respuesta == "1") {
                 res = rCorrecta;
+                imagen = '<img class="card-img-top"  style="width: 30rem;" src="assets/img/jose.png" alt="imagen de jose">';
+            } else if (respuesta == "2") {
+                res = rCorrecta;
+                imagen = '<img class="card-img-top"  style="width: 30rem;" src="assets/img/carlos.png" alt="imagen de carlos">';
             } else {
                 res = rALaSuerte;
+                imagen = '<img class="card-img-top"  style="width: 30rem;" src="assets/img/guzman.png" alt="imagen de guzman">';
             }
-            Swal.fire({ html: `La respuesta correcta es ${res}` })
+            Swal.fire({ html: `${imagen}<br><h3>La respuesta correcta es ${res} estoy 100% seguro</h3>` })
         }
 
     })()

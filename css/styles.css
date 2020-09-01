@@ -106,6 +106,12 @@ p {
     justify-content: center;
 }
 
+.img-centrada:hover {
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px 15px #FFFFFF;
+    transition-duration: 3s;
+}
+
 
 /*Botones*/
 
@@ -250,6 +256,8 @@ p {
     border: .3rem solid #FFF;
     border-radius: 3rem;
     margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-areas: "a b b b b b b b b b b b b";
 }
 
 .respuestas div:hover {
@@ -262,6 +270,17 @@ p {
     font-weight: bold;
     text-decoration: none;
     letter-spacing: .1rem;
+    grid-area: "b";
+    align-self: center;
+}
+
+.respuestas span {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: .1rem;
+    grid-area: "a";
 }
 
 .no-subrayado {
