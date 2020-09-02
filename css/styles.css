@@ -21,6 +21,10 @@ img {
     max-width: 100%;
 }
 
+.noline {
+    text-decoration-line: none !important;
+}
+
 .contenedor {
     max-width: 120rem;
     margin: 0 auto;
@@ -217,11 +221,11 @@ p {
 .niveles .nivelActual {
     border: .3rem solid #ff7f04;
     color: #fff;
-    background: linear-gradient(to bottom, #ffb76b 0%, #ff7f04 100%) !important;
+    background: linear-gradient(to bottom, #ffb76b 0%, #ff7f04 100%);
 }
 
 .dinero {
-    background: linear-gradient(to bottom, #ffb76b 0%, #ff7f04 100%) !important;
+    background: linear-gradient(to bottom, #ffb76b 0%, #ff7f04 100%);
 }
 
 .logo {

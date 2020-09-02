@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-borderless/borderless.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JUGAR</title>
 </head>
@@ -41,24 +41,24 @@
 
             <div class="comodines">
 
-                <a href="#" onclick="modificarSonido(this);">
+                <a href="#" class="noline" onclick="modificarSonido(this);">
                     <div id="sonido"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
                     <span id="sonidoActivo" style="display: none;">1</span>
                 </a>
 
-                <a href="#" onclick="usarComodin(this, 'descartar2');">
+                <a href="#" class="noline" onclick="usarComodin(this, 'descartar2');">
                     <div id="descartar2"><span>50:50 </span></div>
                 </a>
 
-                <a href="#" onclick="usarComodin(this, 'tiempo');">
+                <a href="#" class="noline" onclick="usarComodin(this, 'tiempo');">
                     <div id="tiempo"><i class="fa fa-phone" aria-hidden="true"></i></div>
                 </a>
 
-                <a href="#" onclick="usarComodin(this, 'audiencia');">
+                <a href="#" class="noline" onclick="usarComodin(this, 'audiencia');">
                     <div id="audiencia"><i class="fa fa-users" aria-hidden="true"></i></div>
                 </a>
 
-                <a href="#" onclick="usarComodin(this, 'perdio');">
+                <a href="#" class="noline" onclick="usarComodin(this, 'perdio');">
                     <div id="perdio"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
                 </a>
 
@@ -75,7 +75,7 @@
 
         <div class="row">
             <div class="respuestas">
-                <a href="#" onclick="seleccionar('respuesta1');">
+                <a href="#" class="noline" onclick="seleccionar('respuesta1');">
                     <div class="col-md-6">
                         <span class="etiqueta-respuesta">A</span>
                         <h4 id="respuesta1">
@@ -83,7 +83,7 @@
                         </h4>
                     </div>
                 </a>
-                <a href="#" onclick="seleccionar('respuesta2');">
+                <a href="#" class="noline" onclick="seleccionar('respuesta2');">
                     <div class="col-md-6">
                         <span class="etiqueta-respuesta">B</span>
                         <h4 id="respuesta2">
@@ -91,7 +91,7 @@
                         </h4>
                     </div>
                 </a>
-                <a href="#" onclick="seleccionar('respuesta3');">
+                <a href="#" class="noline" onclick="seleccionar('respuesta3');">
                     <div class="col-md-6">
                         <span class="etiqueta-respuesta">C</span>
                         <h4 id="respuesta3">
@@ -99,7 +99,7 @@
                         </h4>
                     </div>
                 </a>
-                <a href="#" onclick="seleccionar('respuesta4');">
+                <a href="#" class="noline" onclick="seleccionar('respuesta4');">
                     <div class="col-md-6">
                         <span class="etiqueta-respuesta">D</span>
                         <h4 id="respuesta4">
